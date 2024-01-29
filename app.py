@@ -34,10 +34,13 @@ if st.button('Predict'):
     
     inp = pd.DataFrame(np.array(L).reshape(1,4),columns=['region', 'type', 'bhk', 'area'])
     Predict = pipe1.predict(inp)
+    st.header("",divider='violet')
+    st.write("House Details : ")
+    st.subheader(f"{region} ,{house_type} ,{BHK}BHK ,{sqft}sqft")
     st.header("",divider='rainbow')
     st.write("Predicted Price by Model is: ")
     st.header(f"{Predict[0]} ₹")
-
+    st.header("",divider='violet')
 
 
 # inp = pd.DataFrame(np.array(["Kanjurmarg" ,"Apartment" ,2 ,730]).reshape(1,4),columns=['region', 'type', 'bhk', 'area'])
